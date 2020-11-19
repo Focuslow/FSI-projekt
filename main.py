@@ -1,6 +1,5 @@
 from PyQt5 import QtGui, QtWidgets, QtCore
 import sys
-from pendulum import coords, draw
 import math
 from graphic_dot import WeightBob
 from pendulum_calc import accel0, accel1, angles
@@ -407,7 +406,6 @@ class MainWindow(QtWidgets.QWidget):
             self.slider1.setSliderPosition(self.slider1Hold)
 
     def fricChange(self):
-        print(self.fricSlider.value())
         if self.paused and not self.animate:
             self.fricSliderHold = self.fricSlider.value()
         else:
