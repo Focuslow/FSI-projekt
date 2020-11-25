@@ -281,7 +281,7 @@ class MainWindow(QtWidgets.QWidget):
             self.oldtest0 = self.grDot0.scenePos()
             self.oldtest1 = self.grDot1.scenePos()
 
-            self.paint()
+        self.paint()
 
     def get_coords(self):
 
