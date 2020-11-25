@@ -129,7 +129,7 @@ class MainWindow(QtWidgets.QWidget):
         self.FricBox.setSpacing(5)
 
         self.fricLab = QtWidgets.QLabel(self)
-        self.fricLab.setText("Friction control")
+        self.fricLab.setText("Drag coefficient")
         self.fricLab.setAlignment(QtCore.Qt.AlignCenter)
         self.fricLab.setFixedWidth(100)
         self.fricLab.setFixedHeight(20)
