@@ -90,6 +90,8 @@ class MainWindow(QtWidgets.QWidget):
         self.slider0.setFixedWidth(100)
         self.slider0.show()
         self.slider0.setValue(50)
+        self.slider0.setMinimum(20)
+        self.slider0.setMaximum(100)
         self.slider0.setStyleSheet(
             "QSlider::handle:horizontal {background-color: rgb(79,174,231); border: 1px; height: 40px; width: 40px; margin: 0 0;}\n")
         self.WeightBox1.addWidget(self.slider0)
@@ -111,6 +113,8 @@ class MainWindow(QtWidgets.QWidget):
         self.slider1.setFixedWidth(100)
         self.slider1.show()
         self.slider1.setValue(50)
+        self.slider1.setMinimum(20)
+        self.slider1.setMaximum(100)
         self.slider1.setStyleSheet(
             "QSlider::handle:horizontal {background-color: rgb(79,174,231); border: 1px; height: 40px; width: 40px; margin: 0 0;}\n")
         self.WeightBox2.addWidget(self.slider1)
@@ -392,10 +396,10 @@ class MainWindow(QtWidgets.QWidget):
         if self.paused == 1 and not self.animate:
             self.slider0Hold = self.slider0.value()
             self.slider1Hold = self.slider1.value()
-            self.dot_size0 = self.slider0.value()+10
-            self.dot_size1 = self.slider1.value()+10
-            self.mass0 = self.dot_size0+20
-            self.mass1 = self.dot_size1+20
+            self.dot_size0 = self.slider0.value()-10
+            self.dot_size1 = self.slider1.value()-10
+            self.mass0 = self.dot_size0-20
+            self.mass1 = self.dot_size1-20
             self.scene.clear()
             self.init_paint()
             self.animate = False
