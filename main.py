@@ -417,11 +417,9 @@ class MainWindow(QtWidgets.QWidget):
         else:
             self.fricSlider.setSliderPosition(self.fricSliderHold)
 
-
-
-
-##gui
-app = QtWidgets.QApplication(sys.argv)
-w = MainWindow()
-w.show()
-app.exec_()
+if __name__ == "__main__":
+    ##gui
+    app = QtWidgets.QApplication(sys.argv)
+    w = MainWindow()
+    w.show()
+    app.exec_()
