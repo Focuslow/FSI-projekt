@@ -1,3 +1,4 @@
+from time import sleep
 from PyQt5 import QtGui, QtWidgets, QtCore
 import sys
 import math
@@ -20,7 +21,7 @@ class MainWindow(QtWidgets.QWidget):
         self.HBox.addLayout(self.VBox)
 
         # timer
-        self.timer = self.startTimer(30)
+        self.timer = self.startTimer(0.01)
         self.paused = 1
 
         # control panel
@@ -89,9 +90,9 @@ class MainWindow(QtWidgets.QWidget):
         self.slider0 = QtWidgets.QSlider(QtCore.Qt.Horizontal, self)
         self.slider0.setFixedWidth(100)
         self.slider0.show()
-        self.slider0.setValue(50)
-        self.slider0.setMinimum(20)
-        self.slider0.setMaximum(100)
+        self.slider0.setValue(60)
+        self.slider0.setMinimum(40)
+        self.slider0.setMaximum(80)
         self.slider0.setStyleSheet(
             "QSlider::handle:horizontal {background-color: rgb(79,174,231); border: 1px; height: 40px; width: 40px; margin: 0 0;}\n")
         self.WeightBox1.addWidget(self.slider0)
@@ -112,9 +113,9 @@ class MainWindow(QtWidgets.QWidget):
         self.slider1 = QtWidgets.QSlider(QtCore.Qt.Horizontal, self)
         self.slider1.setFixedWidth(100)
         self.slider1.show()
-        self.slider1.setValue(50)
-        self.slider1.setMinimum(20)
-        self.slider1.setMaximum(100)
+        self.slider1.setValue(60)
+        self.slider1.setMinimum(40)
+        self.slider1.setMaximum(80)
         self.slider1.setStyleSheet(
             "QSlider::handle:horizontal {background-color: rgb(79,174,231); border: 1px; height: 40px; width: 40px; margin: 0 0;}\n")
         self.WeightBox2.addWidget(self.slider1)
@@ -282,6 +283,7 @@ class MainWindow(QtWidgets.QWidget):
             self.oldtest1 = self.grDot1.scenePos()
 
         self.paint()
+        sleep(0.013)
 
     def get_coords(self):
 
